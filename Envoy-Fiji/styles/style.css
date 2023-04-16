@@ -42,6 +42,10 @@ body {
 }
 
 .links:hover::after {
+  transform: scaleX(1);
+}
+
+.links::after {
   content: "";
   width: 100%;
   height: 2px;
@@ -49,7 +53,11 @@ body {
   position: absolute;
   left: 0;
   bottom: 0;
+  transform: scaleX(0);
+  width: 100%;
+  transition: transform 200ms ease;
 }
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -131,7 +139,6 @@ body {
     top: 5em;
     opacity: 1;
   }
-  
 }
 
 .hero-description {
