@@ -9,8 +9,48 @@
 
 body {
   font-family: "Mulish", sans-serif;
-  height: 200vh;
-  background-color: #eeee;
+  background: rgb(240, 236, 226);
+  background-repeat: no-repeat;
+  background: linear-gradient(
+    180deg,
+    rgba(240, 236, 226, 1) 0%,
+    rgba(223, 211, 195, 1) 50%,
+    rgba(199, 177, 152, 1) 100%
+  );
+  overflow-x: hidden;
+}
+
+.top-title {
+  height: 4vh;
+  align-items: center;
+  display: flex;
+  width: 99.1vw;
+  background-color: beige;
+  position: relative;
+}
+
+.title-top {
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  width: 400px;
+  animation: moving 15s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes moving {
+  0% {
+    transform: translate(0, 0);
+    right: -20%;
+  }
+  50% {
+    transform: translate(-450px, 0);
+    right: 25%;
+  }
+  100% {
+    transform: translate(-900px, 0);
+    right: 50%;
+  }
 }
 
 .navigation {
@@ -92,40 +132,86 @@ body {
   animation-fill-mode: backwards;
 }
 .hero {
-  background-color: white;
-  height: 85vh;
   position: relative;
+  width: 100%;
+  background-image: url(/Media/dior.webp);
+  z-index: -4;
+  height: 85vh;
 }
-
-.hero-section {
-  width: 600px;
-  height: 300px;
-  text-align: left;
+.hero::after{
+  content: "";
   position: absolute;
-  top: 20%;
-  padding: 10px 20px;
-  left: 8%;
-  font-size: 125%;
-  animation: bump 600ms ease-in-out;
-  animation-delay: 100ms;
+  inset: 0;
+  background-image: url(/Media/calvinklien.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px) brightness(70%);
+  z-index: -1;
+   animation: up 600ms ease-in-out;
+  animation-delay: 2000ms;
+  animation-fill-mode: both;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(/Media/calvinklien.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px) brightness(70%);
+  z-index: -1;
+   animation: up 600ms ease-in-out;
+  animation-delay: 2000ms;
   animation-fill-mode: both;
 }
 
+.hero-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  padding: 10px 20px;
+  text-align: center;
+  color: white;
+  border: 3px solid white;
+  font-size: 125%;
+  animation: left 600ms ease-in-out;
+  animation-delay: 2000ms;
+  animation-fill-mode: both;
+}
 .hero-title {
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: 290%;
-  width: 80%;
   animation: bump 600ms ease-in-out;
 }
 
+@keyframes left {
+  0% {
+  }
+  100% {
+    left: 0;
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes up {
+  0% {
+  }
+  100% {
+    left: 0;
+    transform: translate(0, -100%);
+  }
+}
 @keyframes bump {
   0% {
-    transform: translateX(-75px);
     opacity: 0;
   }
   100% {
-    transform: translateX(0px);
     opacity: 1;
   }
 }
@@ -142,10 +228,11 @@ body {
 }
 
 .hero-description {
-  width: 73%;
   animation: bump 600ms ease-in-out;
   animation-delay: 500ms;
   animation-fill-mode: backwards;
+  width: 80%;
+  margin: 0 auto;
 }
 .buttons {
   margin-top: 20px;
@@ -156,12 +243,12 @@ body {
 
 .explore {
   padding: 2.5px 5px;
-  border: 2px solid black;
+  border: 2px solid;
   border-radius: 5px;
 }
 
 .learn {
-  border: 2px solid black;
+  border: 2px solid;
   padding: 2.5px 5px;
   border-radius: 5px;
 }
@@ -306,11 +393,6 @@ body {
   border-radius: 10px;
 }
 
-hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 .categories-section {
   border: 3px solid black;
   height: 1500px;
@@ -331,4 +413,71 @@ hr {
   background-color: red;
   border: 3px solid black;
   flex-basis: 20%;
+}
+
+#pictures {
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  width: 30%;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background 200ms ease-in-out;
+  filter: blur(5px);
+}
+
+.director {
+  height: 100vh;
+  background-color: #f0ece2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.director-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.director-description-container {
+  width: 30%;
+  text-align: center;
+  padding: 2em;
+  margin-left: 10%;
+}
+
+.director-picture {
+  background-image: url(/Media/whiteman.avif);
+  width: 500px;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.director-title {
+  margin-top: 10px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.director-description {
+  font-size: 20px;
+}
+.history {
+  background-color: #dfd3c3;
+  height: 100vh;
+}
+
+.features {
+  height: 100vh;
+  background-color: #c7b198;
+}
+
+footer {
+  height: 30vh;
+  background-color: #596e79;
 }

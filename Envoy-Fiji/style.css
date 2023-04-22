@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Mulish", sans-serif;
+  overflow-x: hidden;
+  height: 200vh;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.navigation {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.unlisted-links {
+  display: flex;
+  justify-content: space-around;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  height: 40px;
+  align-items: center;
+}
+
+.title {
+  position: absolute;
+  left: 50px;
+}
+
+.sign-in {
+  position: absolute;
+  right: 50px;
+  padding: 0.4em 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50px;
+  border: 1px solid black;
+}
+
+.nav-hr {
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hero {
+  height: 90vh;
+  position: relative;
+}
+
+.hero-description {
+  width: 25%;
+  position: absolute;
+  top: 150px;
+  left: 200px;
+  border: 2px solid black;
+  padding: 10px 10px;
+  border-radius: 20px;
+
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+.learn {
+  border: 1.5px solid black;
+  padding: 10px 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.explore {
+  background-color: rgb(46, 173, 46);
+  color: white;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+.learn {
+}
+.hero-title {
+  font-size: 90px;
+}
+
+.picture-container {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  right: 100px;
+  top: 70px;
+  animation: 700ms 1 SlideIn forwards ease-in-out;
+}
+
+.one {
+  background-image: url("https://source.unsplash.com/random/1920x1080/?skyscrapers&1");
+  animation: 1s 1 alternate picturesHeightUp forwards;
+}
+.two {
+  background-image: url("https://source.unsplash.com/random/1920x1080/?skyscrapers&2");
+  animation: 1s 1 alternate picturesHeightDown forwards;
+}
+.three {
+  background-image: url("https://source.unsplash.com/random/1920x1080/?skyscrapers&3");
+  animation: 1s 1 alternate picturesHeightUp forwards;
+}
+
+.four {
+  background-image: url("https://source.unsplash.com/random/1920x1080/?skyscrapers&4");
+  animation: 1s 1 alternate picturesHeightDown forwards;
+}
+.five {
+  background-image: url("https://source.unsplash.com/random/1920x1080/?skyscrapers&5");
+  animation: 1s 1 alternate picturesHeightUp forwards;
+}
+.six {
+  background-image: url("https://source.unsplash.com/random/1920x1080/?skyscrapers&6");
+  animation: 1s 1 alternate picturesHeightDown forwards;
+}
+.picture {
+  height: 100%;
+  width: 100%;
+  animation-delay: 1s;
+}
+
+.hero-pictures {
+  width: 100px;
+  height: 800px;
+  border-radius: 20px;
+  overflow: hidden;
+
+}
+
+
+@keyframes picturesHeightDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes picturesHeightUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50px);
+  }
+}
+
+
+@keyframes SlideIn {
+    from{
+        transform: translateX(750px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+
+.line{
+  width: 1px;
+  height: 100%;
+  border: 1px solid black;
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
